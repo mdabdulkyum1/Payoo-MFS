@@ -8,7 +8,7 @@ document.getElementById('log-out').addEventListener('click', function(event) {
 });
 
 
-// set event for cash out in main blanch
+// set event for add money in main blanch
 document.getElementById('add-money-btn')
     .addEventListener('click', function(event){
         event.preventDefault();
@@ -18,5 +18,17 @@ document.getElementById('add-money-btn')
         const newBalance = mainBalance + addBalance;
         // update to main balance
         document.getElementById('main-balance').innerText = newBalance;
-
+        console.log(mainBalance, addBalance)
+    });
+// set event for cash out in main blanch
+document.getElementById('cash-out-btn')
+    .addEventListener('click', function(event){
+        event.preventDefault();
+        const mainBalance = getTextFiledById('main-balance');
+        // add balance
+        const addBalance = getInputFiledById('cash-out-balance');
+        const newBalance = mainBalance - addBalance;
+        // update to main balance
+        document.getElementById('main-balance').innerText = newBalance;
+        console.log(mainBalance, addBalance)
     });
