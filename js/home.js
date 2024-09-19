@@ -6,8 +6,6 @@ document.getElementById('log-out').addEventListener('click', function(event) {
     // switch to login page
  
 });
-
-
 // set event for add money in main blanch
 document.getElementById('add-money-btn')
     .addEventListener('click', function(event){
@@ -31,4 +29,13 @@ document.getElementById('cash-out-btn')
         // update to main balance
         document.getElementById('main-balance').innerText = newBalance;
         console.log(mainBalance, addBalance)
+    });
+
+    document.getElementById('add-money-action-btn')
+    .addEventListener('click', function(){
+        hideForm('add-money-form');
+    });
+    document.getElementById('cast-out-action-btn')
+    .addEventListener('click', function(){
+        hideForm('cash-out-form');
     });

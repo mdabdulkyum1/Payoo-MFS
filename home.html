@@ -39,15 +39,15 @@
             <div class="divider"></div>
 
             <div class="grid grid-cols-3 gap-3 px-3">
-                <button class="btn btn-outline btn-primary">Add Money</button>
-                <button class="btn btn-outline btn-primary">Cash Out</button>
+                <button id="add-money-action-btn" class="btn btn-outline btn-primary">Add Money</button>
+                <button id="cast-out-action-btn" class="btn btn-outline btn-primary">Cash Out</button>
                 <button class="btn btn-outline btn-primary">Transfer Money</button>
                 <button class="btn btn-outline btn-primary">Get Bonus</button>
                 <button class="btn btn-outline btn-primary">Pay Bill</button>
                 <button class="btn btn-outline btn-primary">Transactions</button>
             </div>
 
-            <div class=" card bg-base-100 w-11/12 m-auto shrink-0 shadow-2xl">
+            <div id="add-money-form" class="hidden card bg-base-100 w-11/12 m-auto shrink-0 shadow-2xl">
                 <form class="card-body">
                     <h1 class="font-extrabold">Add Money</h1>
                     <div class="form-control">
@@ -69,10 +69,8 @@
                     </div>
                 </form>
             </div>  
-
-
             <!-- cash out form  -->
-            <div class=" card bg-base-100 w-11/12 m-auto shrink-0 shadow-2xl">
+            <div id="cash-out-form" class="hidden card bg-base-100 w-11/12 m-auto shrink-0 shadow-2xl">
                 <form class="card-body">
                     <h1 class="font-extrabold">Cash Out</h1>
                     <div class="form-control">
