@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    hello
+   
+    <main class="flex justify-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+                <div class="artboard artboard-demo phone-1">
+
+                    <!-- header Starts -->
+                    <header>
+                        <div class="stats bg-primary text-primary-content">
+                            <div class="stat">
+                              <div class="stat-title text-white font-extrabold">Account balance</div>
+                              <div class="stat-value text-2xl"><span>9,400</span><span>৳</span></div>
+                            </div>
+                          
+                            <div class="stat">
+                              <div class="stat-actions flex items-center">
+                                <button class="btn btn-sm">Log out</button>
+                              </div>
+                            </div>
+                          </div>
+                    </header>
+                    <!-- header ends -->
+                    <div class="divider"></div>
+                    
+                    <div class="px-5">
+                        <h3 class="text-2xl font-semibold">🔥 Welcome to Payooo!</h3>
+                        <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="grid grid-cols-3 gap-3 px-3">
+                        <button class="btn btn-outline btn-primary">Add Money</button>
+                        <button class="btn btn-outline btn-primary">Cash Out</button>
+                        <button class="btn btn-outline btn-primary">Transfer Money</button>
+                        <button class="btn btn-outline btn-primary">Get Bonus</button>
+                        <button class="btn btn-outline btn-primary">Pay Bill</button>
+                        <button class="btn btn-outline btn-primary">Transactions</button>
+                    </div>
+            
+
+
+
+
+
+
+
+                    <div class="hidden card bg-base-100 w-11/12 max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Mobile Number</span>
+                                </label>
+                                <input id="mobile-number" type="phone" placeholder="Enter your number"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">4 Digit Pin</span>
+                                </label>
+                                <input id="pin" type="password" placeholder="Enter 4 Digit Pin"
+                                    class="input input-bordered" required autocomplete="off" />
+                                <label class="label">
+                                    <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div class="form-control mt-6">
+                                <button id="login-btn" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
