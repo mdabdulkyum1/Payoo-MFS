@@ -38,12 +38,23 @@ document.getElementById('add-money-btn')
         // create li
         const li = document.createElement('li');
         li.classList.add('bg-green-100','text-green-700','text-2xl','px-5','py-2','mb-2', 'rounded-sm')
-        li.innerHTML = `Money added ${addBalance} taka <i class="fa-solid fa-trash-can cursor-pointer"></i>`;
+      
+      // set uniq id 
+      let uniq = 0;
+      uniq++;
+      
+        li.innerHTML = `Money added ${addBalance} taka <i id="delete-a-${uniq}" class="fa-solid fa-trash-can cursor-pointer"></i>`;
         if(!isNaN(addBalance)){
             ul.appendChild(li);
         }
 
 
+const deleteIcon = document.querySelector(`#delete-a-${uniq}`);
+        console.log(deleteIcon);
+        
+        deleteIcon.addEventListener('click', function () {
+           ul.removeChild(li);
+        })
 
 
 
@@ -56,6 +67,8 @@ document.getElementById('add-money-btn')
 
     });
 // set event for cash out in main blanch
+// unic id
+let count = 0;
 document.getElementById('cash-out-btn')
     .addEventListener('click', function(event){
         event.preventDefault();
@@ -82,14 +95,28 @@ document.getElementById('cash-out-btn')
         const ul = document.getElementById('transactions-history');
         // create li
         const li = document.createElement('li');
-        li.classList.add('bg-red-100','text-red-700','text-2xl','px-5','py-2','mb-2', 'rounded-sm')
-        li.innerHTML = `Cash Out ${cashOutBalance} taka <i class="fa-solid fa-trash-can cursor-pointer"></i>`;
+        li.classList.add('bg-red-100','text-red-700','text-2xl','px-5','py-2','mb-2', 'rounded-sm');
+        
         if(!isNaN(cashOutBalance)){
             ul.appendChild(li);
         }
 
 
 
+        
+        
+                // unique id genaretw 
+                
+                count++;
+        
+        li.innerHTML = `Cash Out ${cashOutBalance} taka <i id="delete-${count}" class="fa-solid fa-trash-can cursor-pointer"></i>`;
+        
+        const deleteIcon = document.querySelector(`#delete-${count}`);
+        console.log(deleteIcon);
+        
+        deleteIcon.addEventListener('click', function () {
+           ul.removeChild(li);
+        })
 
            // clear input filed
            document.getElementById('cash-out-balance').value = "";
@@ -99,3 +126,60 @@ document.getElementById('cash-out-btn')
 /* add Transactions
 * 
 */ 
+/*let count = 0;
+
+document.getElementById('cash-out-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    const mainBalance = getTextFiledById('main-balance');
+    const cashOutBalance = getInputFiledById('cash-out-balance');
+    const newBalance = mainBalance - cashOutBalance;
+
+    // Check if cash out amount is valid
+    if (!isNaN(cashOutBalance)) {
+        if (cashOutBalance > mainBalance) {
+            alert(`No no no, Your balance is: ${mainBalance}`);
+            document.getElementById('cash-out-balance').value = "";
+            document.getElementById('cash-pin').value = "";
+            return;
+        }
+
+        // Update the main balance
+        document.getElementById('main-balance').innerText = newBalance;
+    } else {
+        alert("Please Enter a Valid Number");
+        return;
+    }
+
+    // Transactions history
+    const ul = document.getElementById('transactions-history');
+    
+    // Create the `li` element
+    const li = document.createElement('li');
+    li.classList.add('bg-red-100', 'text-red-700', 'text-2xl', 'px-5', 'py-2', 'mb-2', 'rounded-sm');
+    
+    // Generate unique ID for the delete icon
+    count++;
+    
+    li.innerHTML = `Cash Out ${cashOutBalance} taka <i id="delete-${count}" class="fa-solid fa-trash-can cursor-pointer"></i>`;
+    
+    // Append the `li` to the transaction history
+    ul.appendChild(li);
+
+    // Find the delete icon and add a click event listener to remove the `li`
+    const deleteIcon = document.querySelector(`#delete-${count}`);
+    console.log(deleteIcon);
+
+    deleteIcon.addEventListener('click', function() {
+        ul.removeChild(li); // Remove the `li` element when the delete icon is clicked
+    });
+
+    // Clear input fields
+    document.getElementById('cash-out-balance').value = "";
+    document.getElementById('cash-pin').value = "";
+});
+*/
+
+
+
+ 
