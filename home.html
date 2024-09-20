@@ -6,6 +6,7 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
 </head>
 
 <body>
@@ -25,27 +26,22 @@
     </header>
     <!-- header ends -->
     <main class="flex justify-center">
-
-
         <div>
-
             <div class="divider"></div>
-
             <div class="px-5">
                 <h3 class="text-2xl font-semibold">🔥 Welcome to Payooo!</h3>
                 <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
             </div>
             <div class="divider"></div>
-
             <div class="grid grid-cols-3 gap-3 px-3">
                 <button id="add-money-action-btn" class="btn btn-outline btn-primary">Add Money</button>
                 <button id="cast-out-action-btn" class="btn btn-outline btn-primary">Cash Out</button>
                 <button class="btn btn-outline btn-primary">Transfer Money</button>
                 <button class="btn btn-outline btn-primary">Get Bonus</button>
                 <button class="btn btn-outline btn-primary">Pay Bill</button>
-                <button class="btn btn-outline btn-primary">Transactions</button>
+                <button id="transactions-btn" class="btn btn-outline btn-primary">Transactions</button>
             </div>
-
+            <!-- add money form -->
             <div id="add-money-form" class="hidden card bg-base-100 w-11/12 m-auto shrink-0 shadow-2xl">
                 <form class="card-body">
                     <h1 class="font-extrabold">Add Money</h1>
@@ -92,7 +88,18 @@
                 </form>
             </div>
             <!-- cash out form ends -->
-
+            <!-- Transactions starts -->
+             <div id="transactions-container" class="hidden" >
+             <div class="space-y-4 flex flex-col justify-center items-center mt-5">
+                <h1 class="font-extrabold text-2xl">Your Transactions Here.</h1>
+                <ul id="transactions-history" class="list-disc">
+                    <!-- <li class="bg-green-100 text-green-700 text-2xl px-5 py-2 mb-2 rounded-sm">Money added 500 taka <i class="fa-solid fa-trash-can"></i></li>
+                    <li class="bg-green-100 text-green-700 text-2xl px-5 py-2 mb-2 rounded-sm">Money added 500 taka <i class="fa-solid fa-trash-can"></i></li>
+                    <li class="bg-red-100 text-red-700 text-2xl px-5 py-2 mb-2 rounded-sm cursor-pointer">Cash out 500 taka <i class="fa-solid fa-trash-can"></i></li> -->
+                </ul>
+             </div>
+            </div>
+            <!-- Transactions ends -->
         </div>
     </main>
     <script src="./js/utilities.js"></script>

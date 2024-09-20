@@ -15,6 +15,7 @@ function getTextFiledById(id){
 function hideForm(id){
     document.getElementById('add-money-form').classList.add('hidden');
     document.getElementById('cash-out-form').classList.add('hidden');
+    document.getElementById('transactions-container').classList.add('hidden');
 
     // current id 
     document.getElementById(id).classList.remove('hidden')
