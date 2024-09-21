@@ -43,7 +43,10 @@ document.getElementById('add-money-btn')
       let uniq = 0;
       uniq++;
       
-        li.innerHTML = `Money added ${addBalance} taka <i id="delete-a-${uniq}" class="fa-solid fa-trash-can cursor-pointer"></i>`;
+        li.innerHTML = `Money added ${addBalance} taka <i id="delete-a-${uniq}" class="fa-solid fa-trash-can cursor-pointer"></i>
+        </br>
+        <p>${formatDate()}</p> 
+        `;
         if(!isNaN(addBalance)){
             ul.appendChild(li);
         }
@@ -109,7 +112,10 @@ document.getElementById('cash-out-btn')
                 
                 count++;
         
-        li.innerHTML = `Cash Out ${cashOutBalance} taka <i id="delete-${count}" class="fa-solid fa-trash-can cursor-pointer"></i>`;
+        li.innerHTML = `Cash Out ${cashOutBalance} taka <i id="delete-${count}" class="fa-solid fa-trash-can cursor-pointer"></i>
+        </br>
+        <p>${formatDate()}</p>
+        `;
         
         const deleteIcon = document.querySelector(`#delete-${count}`);
         console.log(deleteIcon);
